@@ -1,8 +1,10 @@
-import * as app from "tns-core-modules/application";
-import { screen } from 'tns-core-modules/platform';
-import { parse } from 'tns-core-modules/ui/builder';
-import { isNullOrUndefined, isNumber } from 'tns-core-modules/utils/types';
-import { DeviceOrientation } from 'tns-core-modules/ui/enums';
+import {
+  Application,
+  Screen
+} from "@nativescript/core";
+import { parse } from '@nativescript/core/ui/builder';
+import { isNullOrUndefined, isNumber } from '@nativescript/core/utils/types';
+import { DeviceOrientation } from '@nativescript/core/ui/enums';
 import { autoPagingIntervalProperty, bounceProperty, CarouselCommon, CarouselItem, 
          CarouselUtil, finiteProperty, indicatorColorProperty, indicatorColorUnselectedProperty, indicatorOffsetProperty, 
          Log, scrollEnabledProperty, selectedPageProperty, showIndicatorProperty } from './carousel.common';
@@ -21,7 +23,7 @@ export class Carousel extends CarouselCommon {
     CarouselUtil.debug = this.debug;
 
     this.currentOrientation = DeviceOrientation.unknown;
-    app.on('orientationChanged', this.onOrientationChanged);
+    Application.on('orientationChanged', this.onOrientationChanged);
   }
 
   get ios(): any {
@@ -71,8 +73,8 @@ export class Carousel extends CarouselCommon {
   }
 
   createNativeView() {
-    const viewWidth = this.getActualSize().width === 0 ? screen.mainScreen.widthDIPs : this.getActualSize().width;
-    const viewHeight = this.getActualSize().height === 0 ? screen.mainScreen.heightDIPs : this.getActualSize().height;
+    const viewWidth = this.getActualSize().width === 0 ? Screen.mainScreen.widthDIPs : this.getActualSize().width;
+    const viewHeight = this.getActualSize().height === 0 ? Screen.mainScreen.heightDIPs : this.getActualSize().height;
     Log.D('createNativeView size', viewWidth, viewHeight);
     
     this.nativeView = DKCarouselView.alloc().initWithFrame(CGRectMake(0, 0, viewWidth, viewHeight));

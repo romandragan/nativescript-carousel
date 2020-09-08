@@ -1,8 +1,4 @@
-import { Color } from 'tns-core-modules/color/color';
-import { ObservableArray } from 'tns-core-modules/data/observable-array/observable-array';
-import { Property, Template, View } from 'tns-core-modules/ui/core/view';
-import { GridLayout } from 'tns-core-modules/ui/layouts/grid-layout';
-import { StackLayout } from 'tns-core-modules/ui/layouts/stack-layout';
+import { Color, ObservableArray, Property, Template, View, GridLayout, StackLayout } from '@nativescript/core';
 
 export declare class Carousel extends CarouselCommon {
   private _androidViewId;

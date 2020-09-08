@@ -1,8 +1,7 @@
-import { parse } from 'tns-core-modules/ui/builder';
-import { View } from 'tns-core-modules/ui/core/view';
-import { GridLayout } from 'tns-core-modules/ui/layouts/grid-layout';
-import { isNullOrUndefined, isNumber } from 'tns-core-modules/utils/types';
-import { layout } from 'tns-core-modules/utils/utils';
+import { parse } from '@nativescript/core/ui/builder';
+import { GridLayout, View } from '@nativescript/core';
+import { isNullOrUndefined, isNumber } from '@nativescript/core/utils/types';
+import { layout } from '@nativescript/core/utils';
 import { CarouselCommon, CarouselUtil, indicatorAnimationDurationProperty, indicatorAnimationProperty, indicatorColorProperty, indicatorColorUnselectedProperty, indicatorPaddingProperty, indicatorRadiusProperty, Log, selectedPageProperty } from './carousel.common';
 
 const VIEWS_STATES = '_viewStates';
@@ -287,6 +286,7 @@ export class Carousel extends CarouselCommon {
   }
 }
 
+@NativeClass()
 class CarouselPagerAdapterClassInner extends PagerNamespace.PagerAdapter {
   private owner: WeakRef<Carousel>;
   constructor(owner: WeakRef<Carousel>) {
@@ -367,6 +367,7 @@ class CarouselPagerAdapterClassInner extends PagerNamespace.PagerAdapter {
   }
 }
 
+@NativeClass()
 class CarouselPageChangedListener extends PagerNamespace.ViewPager.SimpleOnPageChangeListener {
   private owner: WeakRef<Carousel>;
 

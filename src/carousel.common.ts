@@ -1,11 +1,17 @@
-import { Color } from 'tns-core-modules/color/color';
-import { ObservableArray } from 'tns-core-modules/data/observable-array/observable-array';
-import { booleanConverter, Property, Template, View } from 'tns-core-modules/ui/core/view';
-import { addWeakEventListener, removeWeakEventListener } from 'tns-core-modules/ui/core/weak-event-listener/weak-event-listener';
-import { Label } from 'tns-core-modules/ui/label';
-import { GridLayout } from 'tns-core-modules/ui/layouts/grid-layout';
-import { StackLayout } from 'tns-core-modules/ui/layouts/stack-layout';
-import { isNullOrUndefined, isNumber } from 'tns-core-modules/utils/types';
+import {
+  addWeakEventListener,
+  booleanConverter,
+  Color,
+  GridLayout,
+  Label,
+  ObservableArray,
+  Property,
+  removeWeakEventListener,
+  StackLayout,
+  Template,
+  View
+} from '@nativescript/core';
+import { isNullOrUndefined, isNumber } from '@nativescript/core/utils/types';
 
 export class CarouselUtil {
   public static debug: boolean = false;
@@ -20,6 +26,7 @@ export class Log {
   }
 }
 
+// @NativeClass()
 export class CarouselCommon extends GridLayout {
   /**
    * String value when hooking into the pageChanged event.
@@ -156,6 +163,7 @@ export class CarouselCommon extends GridLayout {
   }
 }
 
+@NativeClass()
 export class CarouselItem extends StackLayout {
   constructor() {
     super();
