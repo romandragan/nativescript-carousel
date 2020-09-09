@@ -26,7 +26,6 @@ export class Log {
   }
 }
 
-// @NativeClass()
 export class CarouselCommon extends GridLayout {
   /**
    * String value when hooking into the pageChanged event.
@@ -163,7 +162,6 @@ export class CarouselCommon extends GridLayout {
   }
 }
 
-@NativeClass()
 export class CarouselItem extends StackLayout {
   constructor() {
     super();
